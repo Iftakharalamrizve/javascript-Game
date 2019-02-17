@@ -58,18 +58,24 @@
 	</div>
 
 	<script>
-		var result={};
-		var handleClick=(question_number,value)=>{
-			var question_number=question_number.toString();
-			result[question_number] = value;
-		}
+			
+			var result={};
+			var handleClick=(question_number,value)=>{
 
-		var sum=0;
-		for(var every in result){
-		  sum = sum+result[every];
-		}
-		var select_mark=document.querySelector('#mark');
-		select_mark.innerHTML=sum;
+				// var question_number=question_number.toString();
+
+				result[question_number] = value;
+				var sum=0;
+				for(var every in result){
+
+					sum = sum+result[every];
+				}
+				var select_mark=document.querySelector('#mark');
+				select_mark.innerHTML="";
+				select_mark.innerHTML=sum;
+
+			}
+
 	</script>
 </body>
 </html>
