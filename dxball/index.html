@@ -1,0 +1,41 @@
+<script type="text/javascript">
+var context;
+var dx= 4;
+var dy=4;
+var y=150;
+var x=10;
+function draw(){
+	var c = document.querySelector('#myCanvas');
+	context=c.getContext('2d');
+	context.clearRect(0,0,300,300);
+	context.beginPath();
+	context.fillStyle="red";
+	context.arc(x,y,20,0,Math.PI*2);
+	context.closePath();
+	context.fill();
+	if( x<0 || x>300)
+	dx=-dx;
+	if( y<0 || y>300)
+		dy=-dy;
+		x+=dx;
+		y+=dy;
+	}
+setInterval(draw,15); 
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML5 Bouncing Ball</title>
+<style type="text/css">
+body { background-color:#ededed; font:normal 12px/18px Arial, Helvetica, sans-serif; }
+#container { width:600px; margin:0 auto; }
+#myCanvas { background:#fff; border:1px solid #cbcbcb; }
+</style>
+</head>
+<body>
+<div id="container">
+	<canvas id="myCanvas" width="300" height="300"></canvas>
+</div>
+</body>
+</html>
